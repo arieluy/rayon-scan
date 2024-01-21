@@ -1,10 +1,19 @@
 [package]
-name = "rayon_scan"
+name = "rayon-scan"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["Ariel Uy"]
+description = "A parallel prefix scan function for ParallelIterator"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/arieluy/rayon-scan"
+documentation = "https://docs.rs/rayon-scan"
+homepage = "https://crates.io/crates/rayon-scan"
+readme = "README.md"
+keywords = ["parallel", "thread", "concurrency", "join", "performance"]
+categories = ["concurrency"]
 
 [dependencies]
-ndarray = "0.15.6"
 rayon = "1.8.1"
+
+[dev-dependencies]
+ndarray = "0.15.6"

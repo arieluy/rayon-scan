@@ -117,7 +117,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rayon_scan"
+name = "rayon-scan"
 version = "0.1.0"
 dependencies = [
  "ndarray",
