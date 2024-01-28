@@ -131,3 +131,22 @@ fn scan_matmul_parallel(b: &mut test::Bencher) {
 fn test_scan_matmul() {
     assert_eq!(scan_matmul(Procs::Sequential), scan_matmul(Procs::Parallel));
 }
+
+#[test]
+fn test_scan_addition(){
+    let init = 0u64;
+    let op = |state: &mut u64, _x: &u64| {
+        *state += 1;
+        Some(*state)
+    };
+    let op_par = |state: &u64, _x: &u64| {
+        *state + 1
+    };
+
+    for _i in 0..100{
+        let v = vec![0u64; 67];
+        let scan_seq = v.iter().scan(init, op).collect::<Vec<u64>>();
+        let scan_par = v.into_par_iter().scan(op_par, init).collect::<Vec<u64>>();
+        assert_eq!(scan_seq, scan_par);
+    }
+}

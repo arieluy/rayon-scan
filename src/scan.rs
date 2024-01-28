@@ -218,7 +218,7 @@ where
     type Item = T;
 
     fn split(self) -> (Self, Option<Self>) {
-        let mid = self.offsets.len() / 2;
+        let mid = self.data.len() / 2;
         if mid == 0 {
             return (self, None);
         }
