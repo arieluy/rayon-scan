@@ -17,3 +17,7 @@ rayon = "1.8.1"
 
 [dev-dependencies]
 ndarray = "0.15.6"
+
+[features]
+default = []
+bench = []

@@ -34,6 +34,20 @@ In order to maximize performance, it is a good idea to limit the amount of split
 
 See https://github.com/rayon-rs/rayon/pull/1036/ for more details on implementation and performance.
 
+## Tests and Benchmarks
+
+To run tests:
+
+```
+cargo test
+```
+
+To run benchmarks:
+
+```
+cargo +nightly test --features "bench"
+```
+
 ## License
 
 Licensed under [Apache 2.0](LICENSE-APACHE) and [MIT](LICENSE-MIT).
